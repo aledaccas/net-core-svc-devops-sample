@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <ProjectId>{E9D1C9C1-08A8-4872-B045-5DBF1AB59876}</ProjectId>
+    <ProjectGuid>{173875A1-CB84-4D03-8086-37773B70300E}</ProjectGuid>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
