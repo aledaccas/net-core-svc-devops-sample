@@ -1,10 +1,6 @@
 using System;
-using Microsoft.AspNetCore.Mvc;
 using net_core_svc_devops_sample.Commands;
-using net_core_svc_devops_sample.Controllers;
-using net_core_svc_devops_sample.Entities;
 using NUnit.Framework;
-using Tests.Mocks;
 
 namespace Tests
 {

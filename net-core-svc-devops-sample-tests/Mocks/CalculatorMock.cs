@@ -5,8 +5,15 @@ using NSubstitute.ExceptionExtensions;
 
 namespace Tests.Mocks
 {
+    /// <summary>
+    /// Calculator Mock class.
+    /// </summary>
     public static class CalculatorMock
     {
+        /// <summary>
+        /// Gets the mock.
+        /// </summary>
+        /// <returns></returns>
         public static ICalculator GetMock()
         {
             var calculator = Substitute.For<ICalculator>();
