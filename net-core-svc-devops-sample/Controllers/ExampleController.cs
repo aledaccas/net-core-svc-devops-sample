@@ -34,6 +34,8 @@ namespace net_core_svc_devops_sample.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("api/example/sum/{number1}/{number2}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         public IActionResult Sum(string number1, string number2)
         {
             try
@@ -54,6 +56,8 @@ namespace net_core_svc_devops_sample.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("api/example/subtract/{number1}/{number2}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         public IActionResult Subtract(string number1, string number2)
         {
             try
@@ -74,6 +78,8 @@ namespace net_core_svc_devops_sample.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("api/example/multiply/{number1}/{number2}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         public IActionResult Multiply(string number1, string number2)
         {
             try
@@ -94,6 +100,8 @@ namespace net_core_svc_devops_sample.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("api/example/divide/{number1}/{number2}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         public IActionResult divide(string number1, string number2)
         {
             try

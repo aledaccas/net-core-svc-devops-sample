@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.IO;
+using System.Reflection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using net_core_svc_devops_sample.Commands;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace net_core_svc_devops_sample
 {
@@ -37,6 +41,15 @@ namespace net_core_svc_devops_sample
         {
             services.AddMvc();
             services.AddSingleton<ICalculator>(new Calculator());
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "net-core-svc-devops-sample", Version = "v1" });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +64,13 @@ namespace net_core_svc_devops_sample
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "net-core-svc-devops-sample V1");
+            });
 
             app.UseMvc();
         }
