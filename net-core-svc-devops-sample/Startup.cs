@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using net_core_svc_devops_sample.Commands;
 
 namespace net_core_svc_devops_sample
 {
@@ -24,6 +25,7 @@ namespace net_core_svc_devops_sample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton<ICalculator>(new Calculator());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
